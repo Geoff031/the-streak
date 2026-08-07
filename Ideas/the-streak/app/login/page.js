@@ -1,7 +1,8 @@
 import React from 'react'
 import LoginClient from './LoginClient'
 
-export default function Page({ searchParams }) {
-  const mode = searchParams?.mode ?? null
+export default async function Page({ searchParams }) {
+  const params = await searchParams  // ← ADD THIS LINE
+  const mode = params?.mode ?? null
   return <LoginClient initialMode={mode} />
 }
